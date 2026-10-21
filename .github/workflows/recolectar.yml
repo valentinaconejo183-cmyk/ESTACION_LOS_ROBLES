@@ -1,0 +1,22 @@
+name: Recoleccion Los Robles
+on:
+  schedule:
+    - cron: '0,15,30,45 * * * *'
+  workflow_dispatch:
+
+jobs:
+  recolectar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install requests pytz
+      - run: python recolector.py
+      - run: |
+          git config user.name "Estacion Los Robles"
+          git config user.email "bot@losrobles.com"
+          git add datos_los_robles.csv
+          git commit -m "Dato automatico" || echo "Sin cambios"
+          git push
