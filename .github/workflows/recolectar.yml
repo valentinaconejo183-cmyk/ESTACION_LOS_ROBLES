@@ -5,7 +5,6 @@ on:
   schedule:
     - cron: '0,15,30,45 * * * *'
   workflow_dispatch:
-
 jobs:
   recolectar:
     runs-on: ubuntu-latest
@@ -20,5 +19,5 @@ jobs:
           git config user.name "Estacion Los Robles"
           git config user.email "bot@losrobles.com"
           git add datos_los_robles.csv
-          git commit -m "Dato automatico" || echo "Sin cambios"
+          git commit -m "Dato Los Robles" || true
           git push
