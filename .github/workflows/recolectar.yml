@@ -1,4 +1,6 @@
 name: Recoleccion Los Robles
+permissions:
+  contents: write
 on:
   schedule:
     - cron: '0,15,30,45 * * * *'
