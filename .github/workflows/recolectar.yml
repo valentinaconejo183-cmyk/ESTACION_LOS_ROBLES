@@ -15,7 +15,7 @@ jobs:
           python-version: '3.10'
       - run: pip install requests pytz
       - run: python recolector.py
-       - run: |
+      - run: |
           git config user.name "Estacion Los Robles"
           git config user.email "bot@losrobles.com"
           git add datos_los_robles.csv
