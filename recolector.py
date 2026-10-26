@@ -24,7 +24,7 @@ try:
     
     existe = os.path.isfile(ARCHIVO)
     with open(ARCHIVO, 'a', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, delimiter=´;´)
         if not existe:
             writer.writerow(['fecha_hora_recoleccion','hora_api','temperatura_C','humedad_%','nubosidad_%','radiacion_Wm2','elevacion_m'])
         writer.writerow(fila)
